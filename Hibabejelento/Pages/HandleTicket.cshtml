@@ -12,7 +12,6 @@
         <h3><b>#@Model.Ticket.Id</b> számú hibajegy kezelése</h3>
     </div>
 
-
     <div class="card-body float-start">
         <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
@@ -49,10 +48,7 @@
                 <input asp-for="Ticket.LongDescription" class="form-control" />
                 <span asp-validation-for="Ticket.LongDescription" class="text-danger"></span>
                 <br />
-
-
             </p>
-
 
             <hr />
 
@@ -66,9 +62,7 @@
                 <button type="submit" class="btn btn-primary">Hibajegy lezárása</button>
             </div>
         </form>
-
     </div>
 
     <div class="card-footer"></div>
-
 </div>

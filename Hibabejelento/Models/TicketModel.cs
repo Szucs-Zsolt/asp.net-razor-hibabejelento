@@ -17,7 +17,6 @@ namespace Hibabejelento.Models
         [Display(Name = "A probléma teljes leírása")]
         public string LongDescription { get; set; } = "";
        
-
         [Required(ErrorMessage = "Név megadása szükséges.")]
         [Display(Name = "A bejelentő neve")]
         public string Name { get; set; } = "";

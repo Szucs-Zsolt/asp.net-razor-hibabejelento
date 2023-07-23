@@ -27,7 +27,6 @@ namespace Hibabejelento.Pages
 
         public IActionResult OnPost()
         {
-
             if (IsReopened)
             {
                 Ticket = _context.Tickets.Find(TicketId);

@@ -11,8 +11,6 @@ namespace Hibabejelento.Models.DataLayer
         public TicketsDbContext(DbContextOptions<TicketsDbContext> option)
             : base(option)
         {
-
-
         }
     }
 }
