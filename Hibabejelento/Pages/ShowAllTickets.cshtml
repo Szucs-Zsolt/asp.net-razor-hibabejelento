@@ -1,0 +1,60 @@
+﻿@page
+@model Hibabejelento.Pages.ShowAllTicketsModel
+@{
+    <meta http-equiv="refresh" content="10">
+}
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>Név</th>
+            <th>Leírás</th>
+            <th>Állapot</th>
+            <th>Beavatkozás</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model.TicketList)
+        {
+            <tr>
+                <td class="col-1">@ticket.Id</td>
+                <td class="col-4">@ticket.Name</td>
+                <td class="col-5">@ticket.ShortDescription</td>
+
+                @if (ticket.IsClosed)
+                {
+                    <td class="col-1">
+                        <span>Lezárva</span>
+                    </td>
+
+                    <td class="col-1">
+                        <a class="btn btn-danger text-warning fw-bold"
+                           asp-area="" asp-page="/ReopenTicket" asp-route-TicketId="@ticket.Id">ÚJRANYITÁSA</a>
+                    </td>
+                }
+                else if (ticket.IsInProcess)
+                {
+                    <td class="col-1">
+                        <span class="text-success fw-bold"> Ügyintézőnél</span>
+                    </td>
+                    <td class="col-1">
+                        <a class="btn btn-danger text-warning fw-bold"
+                           asp-area="" asp-page="/ReopenTicket" asp-route-TicketId="@ticket.Id">ÚJRANYITÁSA</a>
+                    </td>
+                }
+                else
+                {
+                    <td class="col-2">
+                        <span class="text-primary">várakozik</span>
+                    </td>
+                }
+
+
+
+            </tr>
+
+
+        }
+    </tbody>
+</table>

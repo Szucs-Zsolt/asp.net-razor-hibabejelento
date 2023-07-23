@@ -1,0 +1,76 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Hibabejelentés";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Hibabejelentés</h1>
+    <br />
+
+    <div class="row">
+
+        <div class="card col-12">
+            <div class="card-header">
+                <h3>Kérjük adja meg az alábbi adatokat:</h3>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <form method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="Ticket.Name" class="form-label float-start"></label>
+                    <input asp-for="Ticket.Name" class="form-control" />
+                    <span asp-validation-for="Ticket.Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Ticket.Address" class="form-label float-start"></label>
+                    <input asp-for="Ticket.Address" class="form-control" />
+                    <span asp-validation-for="Ticket.Address" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Ticket.Phone" class="form-label float-start"></label>
+                    <input asp-for="Ticket.Phone" class="form-control" />
+                    <span asp-validation-for="Ticket.Phone" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Ticket.Email" class="form-label float-start"></label>
+                    <input asp-for="Ticket.Email" class="form-control" />
+                    <span asp-validation-for="Ticket.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Ticket.ShortDescription" class="form-label float-start"></label>
+                    <input asp-for="Ticket.ShortDescription" class="form-control" />
+                    <span asp-validation-for="Ticket.ShortDescription" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Ticket.LongDescription" class="form-label float-start"></label>
+                    <textarea rows="10" asp-for="Ticket.LongDescription" class="form-control"></textarea>
+                    <span asp-validation-for="Ticket.LongDescription" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input asp-for="Ticket.IsConsent" class="form-check-input" />
+                    <label asp-for="Ticket.IsConsent" class="form-check-label"></label>
+                    <br />
+                    <span asp-validation-for="Ticket.IsConsent" class="text-danger "></span>
+                    <a asp-area="" asp-page="/Privacy" class="nav-link" target="_blank">Adatkezelési tájékoztató</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-3">Hibabejelentés elküldése</button>
+            </form>
+        </div>
+
+        <div class="card-footer"></div>
+    </div>
+</div>
+
+</div>

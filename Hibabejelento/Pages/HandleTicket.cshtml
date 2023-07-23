@@ -1,0 +1,74 @@
+﻿@page
+@model Hibabejelento.Pages.HandleTicketModel
+@{
+}
+<div class="text-center">
+    <h1 class="display-4">Hibakezelés</h1>
+    <br />
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3><b>#@Model.Ticket.Id</b> számú hibajegy kezelése</h3>
+    </div>
+
+
+    <div class="card-body float-start">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <p>
+                <input type="hidden" asp-for="Ticket.Id" />
+                <input type="hidden" asp-for="Ticket.IsConsent" />
+
+                <label asp-for="Ticket.Name" class="fw-bold form-label"></label>
+                <input asp-for="Ticket.Name" class="form-control" />
+                <span asp-validation-for="Ticket.Name" class="text-danger"></span>
+                <br />
+                <label asp-for="Ticket.Phone" class="fw-bold form-label"></label>
+                <input asp-for="Ticket.Phone" class="form-control" />
+                <span asp-validation-for="Ticket.Phone" class="text-danger"></span>
+                <br />
+                <label asp-for="Ticket.Address" class="fw-bold form-label"></label>
+                <input asp-for="Ticket.Address" class="form-control" />
+                <span asp-validation-for="Ticket.Address" class="text-danger"></span>
+                <br />
+                <label asp-for="Ticket.Email" class="fw-bold form-label"></label>
+                <input asp-for="Ticket.Email" class="form-control" />
+                <span asp-validation-for="Ticket.Email" class="text-danger"></span>
+                <br />
+            </p>
+
+            <hr />
+
+            <p>
+                <label asp-for="Ticket.ShortDescription" class="fw-bold form-label"></label><br />
+                <input asp-for="Ticket.ShortDescription" class="form-control" />
+                <span asp-validation-for="Ticket.ShortDescription" class="text-danger"></span>
+                <br />
+                <label asp-for="Ticket.LongDescription" class="fw-bold form-label"></label><br />
+                <input asp-for="Ticket.LongDescription" class="form-control" />
+                <span asp-validation-for="Ticket.LongDescription" class="text-danger"></span>
+                <br />
+
+
+            </p>
+
+
+            <hr />
+
+            <p>
+                <label asp-for="Ticket.HelpdeskNote" class="form-label float-start fw-bold"></label>
+                <textarea rows="10" asp-for="Ticket.HelpdeskNote" class="form-control"></textarea>
+                <span asp-validation-for="Ticket.HelpdeskNote" class="text-danger"></span>
+                <br />
+            </p>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary">Hibajegy lezárása</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="card-footer"></div>
+
+</div>

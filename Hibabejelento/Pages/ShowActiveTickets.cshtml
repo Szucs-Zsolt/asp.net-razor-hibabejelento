@@ -1,0 +1,38 @@
+﻿@page
+@model Hibabejelento.Pages.ActiveTicketsModel
+@{
+}
+<div>Ügyintéző: </div>
+<div class="center-text">
+    <h1>Lezáratlan hibajegyek</h1>
+    <meta http-equiv="refresh" content="10">
+</div>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>Név</th>
+            <th>Leírás</th>
+            <th>Kezelés</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model.TicketList)
+        {
+            <tr>
+                <td class="col-1">@ticket.Id</td>
+                <td class="col-4">@ticket.Name</td>
+                <td class="col-6">@ticket.ShortDescription</td>
+                <td class="col-1">
+
+                <a class="nav-link fw-bold"
+                   asp-area="" asp-page="/HandleTicket" asp-route-TicketId="@ticket.Id">Ügyintézés</a>
+                </td>
+            </tr>
+            
+
+        }
+    </tbody>
+</table>
